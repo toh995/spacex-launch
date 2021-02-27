@@ -1,0 +1,26 @@
+.list-view-card {
+    border: 2px solid black;
+    max-height: 125px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.list-view-card__image {
+    max-height: 125px;
+}
+
+.list-view-card__text {
+    margin: 0.5em;
+}
+
+
+.list-view-card__name {
+    font-weight: bold;
+    font-size: larger;
+}
+
+.list-view-card__link {
+    margin: 0.5em;
+    margin-left: 0;
+}

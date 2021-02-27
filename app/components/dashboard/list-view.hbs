@@ -1,0 +1,17 @@
+<div class="list-view">
+    {{#each @records as |model|}}
+        <div class="list-view-card">
+            <img class="list-view-card__image" src={{model.imageUrl}} alt="Launch">
+            <div class="list-view-card__text">
+                <div class="list-view-card__name">{{model.name}}</div>
+                <div>{{model.description}}</div>
+                <br>
+                <div>
+                    <LinkTo class="list-view-card__link" @route={{this.detailRoute}} @model={{model}}>View Detail</LinkTo>
+                    <a class="list-view-card__link" href={{model.wikipediaUrl}} target="_blank">View {{this.capitalizedModelName}}</a>
+                </div>
+
+            </div>
+        </div>
+    {{/each}}
+</div>

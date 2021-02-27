@@ -1,0 +1,27 @@
+<div class="dashboard">
+    <header class="dashboard__buttons-container">
+        <div class="dashboard__buttons">
+        <span>
+            <button type="button" disabled={{eq this.selectedModelName "launch"}} {{on "click" (fn this.selectModelName "launch")}}>Launches</button>
+            <button type="button" disabled={{eq this.selectedModelName "rocket"}} {{on "click" (fn this.selectModelName "rocket")}}>Rockets</button>
+        </span>
+
+        <span>
+            <button type="button" disabled={{eq this.selectedLayout "grid"}} {{on "click" (fn this.selectLayout "grid")}}>Grid</button>
+            <button type="button" disabled={{eq this.selectedLayout "list"}} {{on "click" (fn this.selectLayout "list")}}>List</button>
+        </span>
+        </div>
+    </header>
+
+    {{#if (eq this.selectedLayout "grid")}}
+        <Dashboard::GridView
+            @records={{this.selectedRecords}}
+            @modelName={{this.selectedModelName}}
+        />
+    {{else if (eq this.selectedLayout "list")}}
+        <Dashboard::ListView
+            @records={{this.selectedRecords}}
+            @modelName={{this.selectedModelName}}
+        />
+    {{/if}}
+</div>
