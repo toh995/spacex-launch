@@ -32,3 +32,8 @@
     grid-area: comments;
     border: 2px solid black;
 }
+
+.details-page__comment {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}

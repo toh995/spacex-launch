@@ -9,7 +9,7 @@ export default class LaunchSerializer extends JSONSerializer {
             imageUrl: hash.links.patch.small ?? '',
             wikipediaUrl: hash.links.wikipedia ?? '',
             youtubeId: hash.links.youtube_id ?? '',
-        }
+        };
 
         return super.normalize(typeClass, hash);
     }

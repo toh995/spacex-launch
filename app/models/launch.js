@@ -1,8 +1,8 @@
-import Model, { attr, belongsTo } from '@ember-data/model';
-import { computed } from '@ember/object';
+import Model, { attr, belongsTo, hasMany } from '@ember-data/model';
 
 export default class LaunchModel extends Model {
     @belongsTo('rocket') rocket;
+    @hasMany('comment') comments;
 
     @attr('string') name;
     @attr('string') description;

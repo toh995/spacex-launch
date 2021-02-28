@@ -23,7 +23,9 @@
         <!-- Comments -->
         <div class="details-page__comments">
             <strong>Comments:</strong>
-            <br><br>
+            {{#each @model.comments as |comment|}}
+                <div class="details-page__comment">{{comment.body}}</div>
+            {{/each}}
         </div>
     </div>
 </div>

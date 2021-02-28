@@ -8,7 +8,7 @@ export default class RocketSerializer extends JSONSerializer {
             description: hash.description,
             imageUrl: hash.flickr_images.length ? hash.flickr_images[0] : '',
             wikipediaUrl: hash.wikipedia,
-        }
+        };
 
         return super.normalize(typeClass, hash);
     }
