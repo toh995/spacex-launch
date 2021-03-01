@@ -1,0 +1,31 @@
+<div class="details-page">
+    <h1 class="details-page__name">{{@model.name}}</h1>
+    
+    <div class="details-page__grid">
+        <!-- video/image -->
+        {{#if this.webcastEmbedUrl}}
+            <iframe class="details-page__video" src={{this.webcastEmbedUrl}} allowfullscreen></iframe>
+        {{else}}
+            <img class="details-page__image" src={{@model.imageUrl}}>
+        {{/if}}
+
+        <!-- description -->
+        <div class="details-page__description">
+            <strong>Description:</strong>
+            <br><br>
+            {{#if @model.description}}
+                {{@model.description}}
+            {{else}}
+                No description.
+            {{/if}}
+        </div>
+
+        <!-- Comments -->
+        <div class="details-page__comments">
+            <strong>Comments:</strong>
+            {{#each @model.comments as |comment|}}
+                <div class="details-page__comment">{{comment.body}}</div>
+            {{/each}}
+        </div>
+    </div>
+</div>
