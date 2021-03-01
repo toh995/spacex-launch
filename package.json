@@ -34,6 +34,9 @@
     "ember-cli-app-version": "^4.0.0",
     "ember-cli-babel": "^7.23.1",
     "ember-cli-dependency-checker": "^3.2.0",
+    "ember-cli-deploy": "^1.0.2",
+    "ember-cli-deploy-build": "^2.0.0",
+    "ember-cli-deploy-git": "^1.3.4",
     "ember-cli-htmlbars": "^5.3.2",
     "ember-cli-inject-live-reload": "^2.0.2",
     "ember-cli-mirage": "^2.0.1",
@@ -65,9 +68,12 @@
     "qunit-dom": "^1.6.0"
   },
   "engines": {
-    "node": "10.* || >= 12"
+    "node": "<=14"
   },
   "ember": {
     "edition": "octane"
-  }
+  },
+  "ember-addon": {
+    "demoURL": "https://toh995.github.io/spacex-launch"
+  }  
 }
