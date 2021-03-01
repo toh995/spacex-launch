@@ -8,7 +8,7 @@ export default class IndexController extends Controller {
     @tracked selectedModelName;
     @tracked selectedLayout = 'grid';
 
-    @computed('selectedModelName').readOnly()
+    @computed('selectedModelName', 'model').readOnly()
     get selectedRecords() {
         const pluralModelName = pluralize(this.selectedModelName);
         return this.model[pluralModelName] ?? A();

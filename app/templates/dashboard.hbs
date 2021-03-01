@@ -2,13 +2,21 @@
     <header class="dashboard__buttons-container">
         <div class="dashboard__buttons">
         <span>
-            <button type="button" disabled={{eq this.selectedModelName "launch"}} {{on "click" (fn this.selectModelName "launch")}}>Launches</button>
-            <button type="button" disabled={{eq this.selectedModelName "rocket"}} {{on "click" (fn this.selectModelName "rocket")}}>Rockets</button>
+            <button type="button" disabled={{eq this.selectedModelName "launch"}} {{on "click" (fn this.selectModelName "launch")}} data-qid="launches-button">
+                Launches
+            </button>
+            <button type="button" disabled={{eq this.selectedModelName "rocket"}} {{on "click" (fn this.selectModelName "rocket")}} data-qid="rockets-button">
+                Rockets
+            </button>
         </span>
 
         <span>
-            <button type="button" disabled={{eq this.selectedLayout "grid"}} {{on "click" (fn this.selectLayout "grid")}}>Grid</button>
-            <button type="button" disabled={{eq this.selectedLayout "list"}} {{on "click" (fn this.selectLayout "list")}}>List</button>
+            <button type="button" disabled={{eq this.selectedLayout "grid"}} {{on "click" (fn this.selectLayout "grid")}} data-qid="grid-view">
+                Grid
+            </button>
+            <button type="button" disabled={{eq this.selectedLayout "list"}} {{on "click" (fn this.selectLayout "list")}} data-qid="list-view">
+                List
+            </button>
         </span>
         </div>
     </header>

@@ -8,4 +8,5 @@ export default class RocketModel extends Model {
     @attr('string') description;
     @attr('string') imageUrl;
     @attr('string') wikipediaUrl;
+    @attr('string') youtubeId;
 }

@@ -6,15 +6,14 @@
     text-align: center;
 }
 
-.grid-view__model-name {
-    /*text-align: center;*/
+.grid-view__card {
+    border: 2px solid black;
+}
+
+.grid-view__card-name {
     font-size: x-large;
     font-weight: bold;
     margin: 0.5em;
-}
-
-.grid-view__card {
-    border: 2px solid black;
 }
 
 .grid-view__card-image {
@@ -22,12 +21,15 @@
     margin: 5%;
 }
 
+.grid-view__card-description {}
+
 .grid-view__card-links {
     display: flex;
     flex-direction: row;
     justify-content: center;
 }
 
-.grid-view__card-link {
+.grid-view__card-link-detail,
+.grid-view__card-link-wiki {
     margin: 1em;
 }

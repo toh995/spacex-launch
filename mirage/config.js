@@ -1,15 +1,40 @@
 import faker from 'faker';
 
-export default function() {
-  this.namespace = 'api';
+import ENV from 'spacex-launch/config/environment';
 
+export default function() {
+  // if we are running tests, add extra "fake" endpoints for the spacex API
+  if (ENV.environment === 'test') {    
+    this.get('https://api.spacexdata.com/v4/launches', (schema, request) => {
+      return schema.launches.all();
+    });
+
+    this.get('https://api.spacexdata.com/v4/rockets', (schema, request) => {
+      return schema.rockets.all();
+    });
+
+    this.get('https://api.spacexdata.com/v4/launches/:id', (schema, request) => {
+      const { id } = request.params;
+      return schema.launches.findBy({ id });
+    });
+
+    this.get('https://api.spacexdata.com/v4/rockets/:id', (schema, request) => {
+      const { id } = request.params;
+      return schema.rockets.findBy({ id });
+    });
+
+  }
+
+  // global defaults
+  this.namespace = 'api';
   this.passthrough('https://api.spacexdata.com/**');
 
   /**
-   * This endpoint can recieve a query param of EITHER `filter[launchId]` OR `filter[rocketId]`.
+   * This comments endpoint is used for both the real app, and for testing.
+   * The endpoint can recieve a query param of EITHER `filter[launchId]` OR `filter[rocketId]`.
    * It will then return all comments related to that rocket or launch id.
    * 
-   * If neither query params exist, then just return all comments.
+   * If neither query params exist on the request, then just return all comments.
    */
   this.get('/comments', (schema, request) => {
     const launchId = request.queryParams['filter[launchId]'];
